@@ -1,0 +1,6 @@
+<a class="list-group-item" (mouseover)="showClose=true"
+   (mouseleave)="showClose=false">
+    <span class="title">{{task['title']}}</span>
+    <span *ngFor="#tag of task['tags']" class="label {{tag['class']}}">{{tag['title']}}</span>
+    <span class="pull-right close" (click)="removeTask.emit(position)" *ngIf="showClose">x</span>
+</a>

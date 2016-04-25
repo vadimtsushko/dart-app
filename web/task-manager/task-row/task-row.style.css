@@ -1,0 +1,18 @@
+span {
+    margin: 0 5px;
+}
+
+span.title {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #333;
+}
+
+span.badge {
+    background-color: #84b6eb;
+}
+
+span.close {
+    cursor: pointer;
+}
