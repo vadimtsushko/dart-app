@@ -2,3 +2,6 @@ button.tags {
     border-radius: 0px !important;
 }
 
+.dropdown-menu{
+    left: -40px;
+}

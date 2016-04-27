@@ -1,12 +1,11 @@
 import 'package:angular2/angular2.dart'
-    show Component, Input, Output, EventEmitter;
-import 'package:angular2/common.dart' show NgFor,NgIf;
+    show Component, Input, Output, EventEmitter,ViewEncapsulation;
 
 @Component(
     selector: 'task-row',
     templateUrl: 'task-row.template.html',
     styleUrls: const ['task-row.style.css'],
-    directives: const [NgFor,NgIf]
+    encapsulation: ViewEncapsulation.None
 )
 class TaskRowComponent {
   @Input()
@@ -15,6 +14,10 @@ class TaskRowComponent {
   int position;
   @Output()
   EventEmitter<int> removeTask = new EventEmitter();
+  @Output()
+  EventEmitter<int> removeTag = new EventEmitter();
+
+
 
   bool showClose = false;
 }

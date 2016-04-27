@@ -16,3 +16,13 @@ span.badge {
 span.close {
     cursor: pointer;
 }
+span.remove-tag{
+    margin: 0 0 0 5px!important;
+    display: none;
+    cursor: pointer;
+    padding: 3px;
+}
+
+span.label:hover >span.remove-tag{
+    display: inline;
+}

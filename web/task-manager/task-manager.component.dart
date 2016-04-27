@@ -1,12 +1,12 @@
-import 'package:angular2/angular2.dart';
-import 'package:angular2/common.dart' show NgFor;
+import 'package:angular2/angular2.dart' show Component, ViewEncapsulation;
 import 'task-row/task-row.component.dart' show TaskRowComponent;
 import 'task-header/task-header.component.dart' show TaskHeaderComponent;
 
 @Component(
     selector: 'task-manager',
     templateUrl: 'task-manager.template.html',
-    directives: const [NgFor, TaskRowComponent, TaskHeaderComponent]
+    directives: const [TaskRowComponent, TaskHeaderComponent],
+    encapsulation: ViewEncapsulation.None
 )
 class TaskManagerComponent {
   String title = 'Задачи';
@@ -15,13 +15,11 @@ class TaskManagerComponent {
       'title':'Написать user-card',
       'tags':[ {
         'class':'label-success',
-        'title':'готово',
-        'isChecked':true
+        'title':'готово'
       },
       {
         'class':'label-warning',
-        'title':'улучшение',
-        'isChecked':false
+        'title':'улучшение'
       }
       ]
     },
@@ -29,27 +27,23 @@ class TaskManagerComponent {
       'title':'Написать user-list',
       'tags':[ {
         'class':'label-success',
-        'title':'готово',
-        'isChecked':true
+        'title':'готово'
       },
       {
         'class':'label-warning',
-        'title':'улучшение',
-        'isChecked':false
+        'title':'улучшение'
       }
       ]
     },
     {
-      'title':'Наприсать tags-manager',
+      'title':'Написать tags-manager',
       'tags':[ {
         'class':'label-success',
-        'title':'готово',
-        'isChecked':true
+        'title':'готово'
       },
       {
         'class':'label-warning',
-        'name':'улучшение',
-        'isChecked':false
+        'title':'улучшение'
       }
       ]
     }
@@ -57,6 +51,10 @@ class TaskManagerComponent {
 
   void removeTask(int position) {
     this.tasks.removeAt(position);
+  }
+
+  void removeTag(options) {
+    this.tasks[options['position']]['tags'].removeAt(options['tagPosition']);
   }
 
   void addTask(tag) {

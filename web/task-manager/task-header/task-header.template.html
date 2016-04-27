@@ -1,27 +1,20 @@
 <div class="input-group">
     <input type="text" class="form-control" placeholder="введите новое задание..." #inputField>
       <span class="input-group-btn">
-        <button type="button" class="btn btn-default dropdown-toggle tags" data-toggle="dropdown" aria-haspopup="true"
+        <button type="button" class="btn btn-default dropdown-toggle tags"
+                data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
     Теги <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
     <li *ngFor="#tag of tags"><a>
-        <input type="checkbox" [checked]="tag['isChecked']" (change)="tag['isChecked'] = !tag['isChecked']">
-        <span class="label {{tag['class']}}">{{tag['title']}}</span>
+        <input type="checkbox" [(ngModel)]="tag['isChecked']">
+        <span class="label" [ngClass]="tag['class']">{{tag['title']}}</span>
     </a></li>
   </ul>
 
-          <button class="btn btn-default" type="button" (click)="addTagsToTask(inputField)">
+          <button class="btn btn-default" type="button" (click)="addTagsToTask(inputField)" >
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
           </button>
       </span>
 </div>
-
-
-<!--<span class="label label-default">Default</span>-->
-<!--<span class="label label-primary">Primary</span>-->
-<!--<span class="label label-success">Success</span>-->
-<!--<span class="label label-info">Info</span>-->
-<!--<span class="label label-warning">Warning</span>-->
-<!--<span class="label label-danger">Danger</span>-->

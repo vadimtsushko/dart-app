@@ -1,18 +1,18 @@
 import 'package:angular2/angular2.dart'
-    show Component, Input, Output, EventEmitter;
-import 'package:angular2/common.dart' show NgFor;
+    show Component, Input, Output, EventEmitter, ViewEncapsulation;
 
 @Component(
     selector: 'task-header',
     templateUrl: 'task-header.template.html',
     styleUrls: const ['task-header.style.css'],
-    directives: const [NgFor]
+    encapsulation: ViewEncapsulation.None
 )
 class TaskHeaderComponent {
   @Input()
   var task;
   @Output()
   EventEmitter addTask = new EventEmitter();
+  var inputValue;
 
   List tags = [
     {

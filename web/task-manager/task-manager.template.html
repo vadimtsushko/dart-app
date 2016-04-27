@@ -3,6 +3,8 @@
         <task-header (addTask)="addTask($event)"></task-header>
     </div>
         <task-row *ngFor="#task of tasks; #i=index" [task]="task" [position]="i"
-                  (removeTask)="removeTask($event)"></task-row>
+                  (removeTask)="removeTask($event)"
+                  (removeTag)="removeTag($event)"
+        ></task-row>
 </div>
 
